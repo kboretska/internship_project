@@ -91,6 +91,6 @@ sudo systemctl restart redis-server
 
 ```
 
-## 6. Verify Deployment
+## 7. Verify Deployment
 
 Check the application by navigating to `http://localhost:8080` in your web browser.
