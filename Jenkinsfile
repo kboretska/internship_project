@@ -3,8 +3,8 @@ pipeline {
         label 'jenslave'
     }
   environment {
-        VM_ACCESS_KEY_ID     = credentials('aws-access-key')
-        VM_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+        VM_ACCESS_KEY_ID     = credentials('access-key')
+        VM_SECRET_ACCESS_KEY = credentials('secret-key')
         POSTGRES_DB           = credentials('mydatabase')
         POSTGRES_USER         = credentials('myuser')
         POSTGRES_PASSWORD     = credentials('mypassword')
