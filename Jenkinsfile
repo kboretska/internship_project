@@ -2,7 +2,18 @@ pipeline {
     agent {
         label 'jenslave'
     }
-  
+  environment {
+        VM_ACCESS_KEY_ID     = credentials('aws-access-key')
+        VM_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+        POSTGRES_DB           = credentials('mydatabase')
+        POSTGRES_USER         = credentials('myuser')
+        POSTGRES_PASSWORD     = credentials('mypassword')
+        MONGO_INITDB_DATABASE = credentials('my_mongo_database')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub_credentials')
+        BACKEND_IMAGE         = 'annasever/backend'
+        FRONTEND_IMAGE        = 'annasever/frontend'
+	GITHUB_WEBHOOK_SECRET = credentials('webhook_secret_credentials')
+    }
     triggers {
        githubPush()  
     }
